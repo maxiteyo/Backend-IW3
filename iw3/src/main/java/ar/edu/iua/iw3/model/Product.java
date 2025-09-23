@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,5 +32,9 @@ public class Product {
     private boolean stock = false;
     
     private double precio;
+
+    @ManyToOne //El many hace referencia a la clase donde estamos.
+    @JoinColumn(name="id_category", nullable = true) //Le digo que la columna que va a hacer de FK en la tabla products se va a llamar id_category
+    private Category category;//Una categoria va a poder tener muchos productos (relacion de muchos a uno)
 
 }

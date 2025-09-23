@@ -1,0 +1,43 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Iw3Application",
+            "request": "launch",
+            "mainClass": "ar.edu.iua.iw3.Iw3Application",
+            "projectName": "iw3"
+        },
+        {
+            "type": "java",
+            "name": "Backend Prod",
+            "request": "launch",
+            "mainClass": "ar.edu.iua.iw3.Iw3Application",
+            "projectName": "iw3",
+                        "args": [
+                "--spring.profiles.active=mysqlprod"
+            ]
+        },
+                {
+            "type": "java",
+            "name": "Backend Dev",
+            "request": "launch",
+            "mainClass": "ar.edu.iua.iw3.Iw3Application",
+            "projectName": "iw3",
+                        "args": [
+                "--spring.profiles.active=mysqldev"
+            ]
+        }
+    ]
+}
