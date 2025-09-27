@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -15,6 +17,7 @@ import lombok.Setter;
 
 @Entity //Para que sea persistente la entidad (le digo JPA) --> Que la clase product sea una entidad que va a persistir
 @Table(name="products") //Le digo que la tabla que va a guardar mis entidades de tipo "Product" se va a llamar "products"
+@Inheritance(strategy = InheritanceType.JOINED) //Permite que defina la estrategia de implementación
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
